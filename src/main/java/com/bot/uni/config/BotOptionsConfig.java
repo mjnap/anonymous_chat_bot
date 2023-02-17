@@ -10,9 +10,9 @@ public class BotOptionsConfig {
     @Bean
     public DefaultBotOptions botOptions() {
         DefaultBotOptions botOptions = new DefaultBotOptions();
-        botOptions.setProxyType(DefaultBotOptions.ProxyType.HTTP);
-        botOptions.setProxyHost("127.0.0.1");
-        botOptions.setProxyPort(10809);
+//        botOptions.setProxyType(DefaultBotOptions.ProxyType.HTTP);
+//        botOptions.setProxyHost("127.0.0.1");
+//        botOptions.setProxyPort(10809);
         return botOptions;
     }
 }
