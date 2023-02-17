@@ -95,4 +95,31 @@ public class MenuService {
         inlineKeyboardMarkup.setKeyboard(inlineButtons);
         return inlineKeyboardMarkup;
     }
+
+    public InlineKeyboardMarkup createSexFilterButton() {
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> inlineButtons = new ArrayList<>();
+        List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList<>();
+
+        InlineKeyboardButton inlineKeyboardButton = new InlineKeyboardButton();
+        inlineKeyboardButton.setText("دختر");
+        inlineKeyboardButton.setCallbackData("filterSex:دختر");
+        inlineKeyboardButtonList.add(inlineKeyboardButton);
+
+        inlineKeyboardButton = new InlineKeyboardButton();
+        inlineKeyboardButton.setText("پسر");
+        inlineKeyboardButton.setCallbackData("filterSex:پسر");
+        inlineKeyboardButtonList.add(inlineKeyboardButton);
+        inlineButtons.add(inlineKeyboardButtonList);
+
+        inlineKeyboardButton = new InlineKeyboardButton();
+        inlineKeyboardButtonList = new ArrayList<>();
+        inlineKeyboardButton.setText("مهم نیست");
+        inlineKeyboardButton.setCallbackData("filterSex:مهم نیست");
+        inlineKeyboardButtonList.add(inlineKeyboardButton);
+        inlineButtons.add(inlineKeyboardButtonList);
+
+        inlineKeyboardMarkup.setKeyboard(inlineButtons);
+        return inlineKeyboardMarkup;
+    }
 }

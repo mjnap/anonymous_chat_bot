@@ -15,7 +15,7 @@ public class User {
     @GeneratedValue
     @Column(name = "id", nullable = false)
     private Long id;
-    private String userId;
+    private String chatId;
     private String name;
     private Integer age;
     private String sex;
@@ -23,5 +23,8 @@ public class User {
     private String city;
     private String uniName;
     private String fieldOfStudy;
-    private Integer term;
+    private Integer entrance;
+    private String pvId;
+    private String lastSeen;
+    private boolean active;
 }

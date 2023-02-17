@@ -11,8 +11,8 @@ public class BotOptionsConfig {
     public DefaultBotOptions botOptions() {
         DefaultBotOptions botOptions = new DefaultBotOptions();
         botOptions.setProxyType(DefaultBotOptions.ProxyType.HTTP);
-        botOptions.setProxyHost("169.254.1.1");
-        botOptions.setProxyPort(8080);
+        botOptions.setProxyHost("127.0.0.1");
+        botOptions.setProxyPort(10809);
         return botOptions;
     }
 }

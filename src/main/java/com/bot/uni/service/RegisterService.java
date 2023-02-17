@@ -67,15 +67,15 @@ public class RegisterService {
         List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList<>();
         InlineKeyboardButton inlineKeyboardButton = new InlineKeyboardButton();
         inlineKeyboardButton.setText("دولتی کاشان");
-        inlineKeyboardButton.setCallbackData("uni:دولتی");
+        inlineKeyboardButton.setCallbackData("uni:دولتی کاشان");
         inlineKeyboardButtonList.add(inlineKeyboardButton);
 
-        inlineKeyboardButton = new InlineKeyboardButton();
-        inlineKeyboardButton.setText("علوم پزشکی کاشان");
-        inlineKeyboardButton.setCallbackData("uni:علوم");
-        inlineKeyboardButtonList.add(inlineKeyboardButton);
+//        inlineKeyboardButton = new InlineKeyboardButton();
+//        inlineKeyboardButton.setText("علوم پزشکی کاشان");
+//        inlineKeyboardButton.setCallbackData("uni:علوم پزشکی کاشان");
+//        inlineKeyboardButtonList.add(inlineKeyboardButton);
+
         inlineButtons.add(inlineKeyboardButtonList);
-
         inlineKeyboardMarkup.setKeyboard(inlineButtons);
         return inlineKeyboardMarkup;
     }
@@ -103,27 +103,25 @@ public class RegisterService {
         return inlineKeyboardMarkup;
     }
 
-    public InlineKeyboardMarkup createTermButtons () {
+    public InlineKeyboardMarkup createEntranceButtons() {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> inlineButtons = new ArrayList<>();
         List<InlineKeyboardButton> inlineKeyboardButtonList = new ArrayList<>();
-        for (int i=1; i<=8; i++) {
+        int i = 96;
+        while (i<=401) {
             InlineKeyboardButton inlineKeyboardButton = new InlineKeyboardButton();
             inlineKeyboardButton.setText(String.valueOf(i));
-            inlineKeyboardButton.setCallbackData("term:"+i);
+            inlineKeyboardButton.setCallbackData("entrance:"+i);
             inlineKeyboardButtonList.add(inlineKeyboardButton);
-            if (inlineKeyboardButtonList.size() == 4) {
+            if (inlineKeyboardButtonList.size() == 3) {
                 inlineButtons.add(inlineKeyboardButtonList);
                 inlineKeyboardButtonList = new ArrayList<>();
             }
 
-            if (i==8) {
-                inlineKeyboardButton = new InlineKeyboardButton();
-                inlineKeyboardButton.setText("8+");
-                inlineKeyboardButton.setCallbackData("term:"+9);
-                inlineKeyboardButtonList.add(inlineKeyboardButton);
-                inlineButtons.add(inlineKeyboardButtonList);
-            }
+            if (i == 99)
+                i = 400;
+            else
+                i++;
         }
 
         inlineKeyboardMarkup.setKeyboard(inlineButtons);

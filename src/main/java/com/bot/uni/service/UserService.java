@@ -17,7 +17,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     public boolean userExists (String chatId) {
-        return userRepository.existsByUserId(chatId);
+        return userRepository.existsByChatId(chatId);
     }
 
     public User save (User user) {
@@ -33,14 +33,14 @@ public class UserService {
                 جنسیت: %s
                 دانشگاه: %s
                 رشته: %s
-                ترم: %d
+                ورودی: %d
                 محل زندگی: %s, %s
                 """.formatted(user.getName(),
                 user.getAge(),
                 user.getSex(),
                 user.getUniName(),
                 user.getFieldOfStudy(),
-                user.getTerm(),
+                user.getEntrance(),
                 user.getState(),
                 user.getCity());
 
